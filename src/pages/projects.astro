@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "3D Asset Rigging",
+    description: "Automated pipeline for game-ready 3D assets",
+    tags: ["Blender", "Python", "3D Vision"]
+  },
+  {
+    title: "Low-Light Enhancement", 
+    description: "Deep learning for image enhancement in poor lighting",
+    tags: ["PyTorch", "CNN", "Computer Vision"]
+  },
+  {
+    title: "Video Reasoning",
+    description: "AI system for temporal video understanding",
+    tags: ["Transformers", "PyTorch"]
+  }
+];
+---
+
+<BaseLayout title="Projects - Jingcheng Li">
+  <h1>My Projects</h1>
+  <div class="projects-grid">
+    {projects.map(project => (
+      <ProjectCard 
+        title={project.title}
+        description={project.description}
+        tags={project.tags}
+      />
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

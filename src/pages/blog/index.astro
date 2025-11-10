@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  { 
+    title: "3D Asset Rigging Research", 
+    url: "/blog/post1",
+    excerpt: "Automated pipeline for creating game-ready 3D models from text descriptions."
+  },
+  { 
+    title: "Low-Light Image Enhancement with Deep Learning", 
+    url: "/blog/post2",
+    excerpt: "Deep learning approach for enhancing images captured in poor lighting conditions."
+  },
+  { 
+    title: "Hierarchical Memory System for Long-Form Video Understanding", 
+    url: "/blog/post3",
+    excerpt: "AI system for temporal reasoning about events in extended video sequences."
+  }
+];
+---
+
+<BaseLayout title="Blog - Jingcheng Li">
+  <h1>Research Blog</h1>
+  <p class="intro">Insights from my computer vision and AI research projects</p>
+  
+  <div class="blog-list">
+    {posts.map(post => (
+      <article class="blog-card">
+        <h2><a href={post.url}>{post.title}</a></h2>
+        <p class="date">{post.date}</p>
+        <p class="excerpt">{post.excerpt}</p>
+        <a href={post.url} class="read-more">Read More →</a>
+      </article>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .intro {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .blog-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .blog-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  }
+  
+  .blog-card h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+  }
+  
+  .blog-card h2 a {
+    color: #2c3e50;
+    text-decoration: none;
+  }
+  
+  .blog-card h2 a:hover {
+    color: #3498db;
+  }
+  
+  .date {
+    color: #999;
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+  }
+  
+  .excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .read-more {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  
+  .read-more:hover {
+    transform: translateX(5px);
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .blog-card {
+      padding: 1.5rem;
+    }
+    
+    .blog-card h2 {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+```
+
+---

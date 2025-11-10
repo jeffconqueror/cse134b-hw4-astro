@@ -1,0 +1,34 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <p>&copy; {year} Jingcheng Li. Built with <a href="https://astro.build" target="_blank">Astro</a></p>
+  <p>
+    <a href="mailto:jingchengli33@gmail.com">Email</a> | 
+    <a href="https://github.com/jeffconqueror" target="_blank">GitHub</a>
+  </p>
+</footer>
+
+<style>
+  footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+  }
+  
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  p {
+    margin: 0.5rem 0;
+  }
+</style>
